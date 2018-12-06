@@ -6,11 +6,6 @@ pipeline {
         }
     }
     stages {
-        stage('Build') {
-            steps {
-                sh 'mvn -B -DskipTests clean package'
-            }
-
             stage('Test') {
                   steps {
                     sh 'node -v'
@@ -22,6 +17,7 @@ pipeline {
                 stage('Build') {
                   steps {
                     sh 'snyk monitor'
+                    sh 'mvn -B -DskipTests clean package'
                   }
                 }
               }
