@@ -12,4 +12,22 @@ pipeline {
             }
         }
     }
+    agent any
+      stages {
+        stage('Test') {
+          steps {
+            sh 'node -v'
+            sh 'npm prune'
+            sh 'npm install'
+            sh 'snyk test'
+          }
+        }
+        stage('Build') {
+          steps {
+            sh 'snyk monitor'
+          }
+        }
+      }
+      environment {
+        SNYK_TOKEN = credentials('3e7b6d8a-6db9-4059-b0bd-115af2f9af6d')
 }
