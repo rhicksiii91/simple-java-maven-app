@@ -9,12 +9,14 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                sh 'echo "***BUILD START***"
                 sh 'mvn -B -DskipTests clean package'
                 sh 'echo "***BUILD DONE***"'
             }
         }
         stage('Test') {
           steps {
+            sh 'echo "SNYK TEST START"'
             sh 'node -v'
             sh 'npm prune'
             sh 'npm install'
