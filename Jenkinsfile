@@ -19,7 +19,7 @@ pipeline {
             sh 'snyk test'
           }
         }
-        stage('Build') {
+        stage('Build with Snyk montor task') {
           steps {
             sh 'snyk monitor'
           }
