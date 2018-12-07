@@ -3,7 +3,7 @@ pipeline {
         docker {
             image 'maven:3-alpine'
             args '-v /root/.m2:/root/.m2'
-            echo "DOCKER STAGE DONE!"
+            println "DOCKER STAGE DONE!"
         }
 
     }
@@ -11,7 +11,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
-                echo "PACKAGE BUILT!"
+                println "PACKAGE BUILT!"
             }
 
         }
@@ -21,7 +21,7 @@ pipeline {
             sh 'npm prune'
             sh 'npm install'
             sh 'snyk test'
-            echo "SNYK TEST HAS BEEN RUN!"
+            println "SNYK TEST HAS BEEN RUN!"
           }
         }
 
