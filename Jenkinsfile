@@ -5,6 +5,7 @@ pipeline {
             args '-v /root/.m2:/root/.m2'
         }
     }
+    agent any
     stages {
         stage('Build') {
             steps {
@@ -12,7 +13,6 @@ pipeline {
             }
         }
     }
-    agent any
       stages {
         stage('Test') {
           steps {
