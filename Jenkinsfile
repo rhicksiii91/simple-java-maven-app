@@ -5,15 +5,12 @@ pipeline {
             args '-v /root/.m2:/root/.m2'
         }
     }
-    agent any
     stages {
         stage('Build') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
             }
         }
-    }
-      stages {
         stage('Test') {
           steps {
             sh 'node -v'
