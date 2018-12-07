@@ -12,6 +12,7 @@ pipeline {
                 sh 'mvn -B -DskipTests clean package'
                 sh 'echo "***BUILD DONE***"'
             }
+        }
         stage('Test') {
           steps {
             sh 'node -v'
