@@ -25,9 +25,9 @@ pipeline {
             sh 'snyk monitor'
           }
         }
+     }
       environment {
                     SNYK_TOKEN = credentials('3e7b6d8a-6db9-4059-b0bd-115af2f9af6d')
                   }
         }
     }
-}
