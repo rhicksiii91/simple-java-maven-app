@@ -6,7 +6,7 @@ pipeline {
         }
     }
 
-    tools {nodejs, "NodeJS 8.14.0"}
+    tools {node, "NodeJS 8.14.0"}
 
     stages {
         stage('Build') {
