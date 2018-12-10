@@ -15,9 +15,6 @@ pipeline {
         }
         stage('Test') {
           steps {
-            sh 'node -v'
-            sh 'npm prune'
-            sh 'npm install'
             sh 'snyk test'
           }
         }
