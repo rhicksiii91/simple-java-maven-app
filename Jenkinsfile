@@ -1,12 +1,15 @@
 pipeline {
     agent {
+
+    tools {nodejs, "NodeJS 8.14.0"}
+
         docker {
             image 'maven:3-alpine'
             args '-v /root/.m2:/root/.m2'
         }
     }
 
-    tools {node, "NodeJS 8.14.0"}
+
 
     stages {
         stage('Build') {
