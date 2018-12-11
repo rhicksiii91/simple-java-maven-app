@@ -16,7 +16,9 @@ pipeline {
                 sh 'echo "***BUILD DONE***"'
             }
         }
-        tools {nodejs, "NodeJS 8.14.0"}
+        tools {
+        nodejs 'NodeJS 8.14.0'
+        }
         stage('Test') {
           steps {
             sh 'node -v'
