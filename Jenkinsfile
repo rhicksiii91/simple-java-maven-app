@@ -11,6 +11,10 @@ pipeline {
             nodejs 'NodeJS 8.14.0'
             }
 
+            environment {
+                    SNYK_TOKEN = credentials('0b2eaa21-0a45-4d71-83ed-bb77713c656d')
+                }
+
     stages {
         stage('Build') {
             steps {
@@ -25,7 +29,7 @@ pipeline {
             sh 'node -v'
             sh 'npm prune'
             sh 'npm install'
-            sh 'snyk auth 3e7b6d8a-6db9-4059-b0bd-115af2f9af6d'
+            sh 'snyk auth 0b2eaa21-0a45-4d71-83ed-bb77713c656d'
             sh 'snyk test'
           }
         }
