@@ -22,7 +22,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'echo "***BUILD START***"'
-                sh 'mvn -B -DskipTests clean package'
+                sh 'mvn -B -DskipTests clean install'
                 sh 'echo "***BUILD DONE***"'
             }
         }
