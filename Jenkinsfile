@@ -32,9 +32,10 @@ pipeline {
                     }
                 }
 
-        stage('Unit Test') {
+        stage('Snyk Monitor') {
                             steps {
-                                sh 'mvn verify'
+                                sh 'echo "***RUNNING SNYK TEST***"'
+                                sh 'snyk monitor --file=pom.xml --org=0e87a59b-680e-44ad-a33e-9999d62d8469'
                             }
                         }
 
