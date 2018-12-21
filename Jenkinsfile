@@ -1,14 +1,9 @@
 pipeline {
-    agent {
-        docker {
-            image 'maven:3-alpine'
-            args '-v /root/.m2:/root/.m2'
-        }
-    }
-
+    agent all
         tools
             {
             nodejs 'NodeJS 8.14.0'
+            maven 'maven 3.6.0;
             }
 
             environment {
