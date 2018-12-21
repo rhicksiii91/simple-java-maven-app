@@ -25,7 +25,7 @@ pipeline {
             sh 'npm prune'
             sh 'npm install -g snyk'
             sh 'snyk auth 3e7b6d8a-6db9-4059-b0bd-115af2f9af6d'
-            sh 'snyk test'
+            sh 'snyk test--file=pom.xml'
           }
         }
      }
