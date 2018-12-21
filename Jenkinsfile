@@ -32,7 +32,11 @@ pipeline {
                     }
                 }
 
-
+        stage('Unit Test') {
+                            steps {
+                                sh 'mvn verify'
+                            }
+                        }
 
      }
     }
