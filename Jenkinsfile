@@ -29,7 +29,7 @@ pipeline {
         stage('Snyk Test') {
                     steps {
                         sh 'echo "***RUNNING SNYK TEST***"'
-                        sh 'snyk test'
+                        sh 'snyk test--file=pom.xml'
                     }
                 }
 
